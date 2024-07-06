@@ -492,6 +492,9 @@ do
         Library.Theme.Violet = Utility.AddImage("Abyss/Assets/UI/Violet.png", "https://i.imgur.com/7B56w4a.png")
         Library.Theme.Asuka = Utility.AddImage("Abyss/Assets/UI/Asuka.png", "https://i.imgur.com/3hwztNM.png")
         --
+        Window.SetText(1, "Checking Assets")
+        --
+        Window.SetText(1, "Checking Input")
         Utility.CLCheck(Window)
         --
         Window.SetText(2, "Finished")
@@ -3921,86 +3924,6 @@ do
         function Window:AddSettingsTab(Additional)
             Additional = typeof(Additional) == "function" and Additional or function() end
 
-            local LocalTheme = {
-                Accent = Library.Theme.Accent[1],
-                Outline = Color3.fromHex("#000005"),
-                Inline = Color3.fromHex("#323232"),
-                LightContrast = Color3.fromHex("#202020"),
-                DarkContrast = Color3.fromHex("#191919"),
-                Text = Color3.fromHex("#e8e8e8"),
-                TextInactive = Color3.fromHex("#aaaaaa")
-            }
-
-            local Settings = Window:Tab("Settings")
-
-            local Theme = Settings:Section("Theme", "Left")
-            
-            Theme:Colorpicker({Title = "Accent", Color = LocalTheme.Accent, Flag = "UIAccent", Callback = function(Color)
-                Library:UpdateTheme({
-                    Accent = Color
-                })
-                LocalTheme.Accent = Color
-            end})
-            
-            Theme:Colorpicker({Title = "Outline", Color = LocalTheme.Outline, Flag = "UIOutline", Callback = function(Color)
-                Library:UpdateTheme({
-                    Outline = Color
-                })
-                LocalTheme.Outline = Color
-            end})
-            
-            Theme:Colorpicker({Title = "Inline", Color = LocalTheme.Inline, Flag = "UIInline", Callback = function(Color)
-                Library:UpdateTheme({
-                    Inline = Color
-                })
-                LocalTheme.Inline = Color
-            end})
-            
-            Theme:Colorpicker({Title = "Inline Contrast", Color = LocalTheme.LightContrast, Flag = "UILightContrast", Callback = function(Color)
-                Library:UpdateTheme({
-                    LightContrast = Color
-                })
-                LocalTheme.LightContrast = Color
-            end})
-            
-            Theme:Colorpicker({Title = "Dark Contrast", Color = LocalTheme.DarkContrast, Flag = "UIDarkContrast", Callback = function(Color)
-                Library:UpdateTheme({
-                    DarkContrast = Color
-                })
-                LocalTheme.DarkContrast = Color
-            end})
-            
-            Theme:Colorpicker({Title = "Text", Color = LocalTheme.Text, Flag = "UIText", Callback = function(Color)
-                Library:UpdateTheme({
-                    Text = Color
-                })
-                LocalTheme.Text = Color
-            end})
-            
-            Theme:Colorpicker({Title = "Text Inactive", Color = LocalTheme.TextInactive, Flag = "UITextInactive", Callback = function(Color)
-                Library:UpdateTheme({
-                    TextInactive = Color
-                })
-                LocalTheme.TextInactive = Color
-            end})
-            
-            local ClickGUI = Settings:Section("Click GUI", "Right")
-            
-            ClickGUI:Toggle({
-                Title = "Enable Anime",
-                Callback = function(State)
-                    Window.ToggleAnime(State)
-                end
-            })
-            
-            ClickGUI:Dropdown({
-                Title = "Anime",
-                List = {"Astolfo", "Violet", "Rem", "Aiko", "Asuka"},
-                Default = "Astolfo",
-                Callback = function(Name)
-                    Window.ChangeAnime(Name)
-                end
-            })
 
             ClickGUI:Button({
                 Title = "Self Destruct",
