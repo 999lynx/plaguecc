@@ -233,21 +233,6 @@ do
         end)
     end
     --
-    Utility.AddCursor = function(Instance)
-        local CursorOutline = Utility.AddDrawing("Triangle", {
-            Color = Library.Theme.Accent[1],
-            Thickness = 1,
-            Filled = false,
-            ZIndex = 5
-        }, Library.Ignores)
-        --
-        local Cursor = Utility.AddDrawing("Triangle", {
-            Color = Library.Theme.Accent[1],
-            Thickness = 3,
-            Filled = true,
-            Transparency = 1,
-            ZIndex = 5
-        }, Library.Ignores)
         --
         Utility.AddConnection(Library.Communication.Event, function(Type, Color)
             if Type == "Accent" then
