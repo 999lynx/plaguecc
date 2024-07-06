@@ -22,8 +22,33 @@ local Mouse = LocalPlayer:GetMouse()
 local InputGUI = Instance.new("ScreenGui", CoreGui)
 -- local Stats = Secure.Stats.Network.ServerStatsItem["Data Ping"] 
 --
-
+-- Aimware = {6, [[{"Outline":"000005","Accent":"c82828","LightText":"e8e8e8","DarkText":"afafaf","LightContrast":"2b2b2b","CursorOutline":"191919","DarkContrast":"191919","TextBorder":"0a0a0a","Inline":"373737"}]]},
 --
+local Library = {
+    Theme = {
+        Accent = {
+            Color3.fromHex("#7885f5"), -- Color3.fromHex("#a280d9"), -- Color3.fromRGB(255, 42, 10), Color3.fromHex("#3599d4")
+            Color3.fromRGB(180, 156, 255),
+            Color3.fromRGB(114, 0, 198),
+            Color3.fromRGB(139, 130, 185),
+            Color3.fromHex("#a83299")
+        },
+        Notification = {
+            Error = Color3.fromHex("#c82828"),
+            Warning = Color3.fromHex("#fc9803")
+        },
+        Hitbox = Color3.fromRGB(69, 69, 69),
+        Friend = Color3.fromRGB(0, 200, 0),
+        Outline = Color3.fromHex("#000005"),
+        Inline = Color3.fromHex("#323232"),
+        LightContrast = Color3.fromHex("#202020"),
+        DarkContrast = Color3.fromHex("#191919"),
+        Text = Color3.fromHex("#e8e8e8"),
+        TextInactive = Color3.fromHex("#aaaaaa"),
+        Font = Drawing.Fonts.Plex,
+        TextSize = 13,
+        UseOutline = false
+    },
     Icons = {},
     Flags = {},
     Items = {},
