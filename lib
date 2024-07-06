@@ -3998,12 +3998,7 @@ do
             return Settings
         end
         --
-        function Window.Watermark(Title)
-            local Watermark = {
-                Title = Title,
-                FPS = 60,
-                Visible = true
-            }
+    
             --
             local WindowOutline = Utility.AddDrawing("Square", {
                 Size = Vector2.new(475, 24),
